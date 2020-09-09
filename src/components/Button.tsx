@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 export const Button = styled.div`
   width: 200px;
@@ -25,4 +25,4 @@ export const Button = styled.div`
     font-size: 80px;
     transform: rotate(90deg);
   }
-`
+`;
