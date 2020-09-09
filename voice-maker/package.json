@@ -1,0 +1,9 @@
+{
+  "name": "voice-maker",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm -fr assets/aiff/* assets/mp3/* & node index.js",
+    "transfar": "cp -R ./assets/mp3 ../src/voices"
+  }
+}
