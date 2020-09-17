@@ -99,7 +99,7 @@ object-assign
     border-radius: 50%;
     border: solid 1px #1e1e1e;
 
-    background-color: #ffffff;
+    background-color: #cecece;
   }
   pointer-events: none;
 `,v=l.a.div`
