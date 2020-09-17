@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Button = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
 
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ export const Button = styled.div`
   align-items: center;
   p {
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     transform: rotate(90deg);
   }
 `;

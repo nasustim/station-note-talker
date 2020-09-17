@@ -1,19 +1,19 @@
-const { spawnSync } = require('child_process')
-const comments = require('./data')
+const { spawnSync } = require('child_process');
+const comments = require('./data');
 
 //  音声ファイル作成
-for(let i in comments) {
+for (const i in comments) {
   spawnSync('say', [
-    '-v', 'Kyoko',      // Kyokoさん
+    '-v', 'Kyoko', // Kyokoさん
     '-o', `./assets/aiff/voice-${i}`, // macos catalinaではaiff; m4aで書き出そうとするとエラーが出た
-    `${comments[i]}`
-  ])
+    `${comments[i]}`,
+  ]);
 }
 
 // 扱いやすいmp3に変換
-for(let i in comments) {
+for (const i in comments) {
   spawnSync('ffmpeg', [
     '-i', `./assets/aiff/voice-${i}.aiff`,
-    `./assets/mp3/voice-${i}.mp3`
-  ])
+    `./assets/mp3/voice-${i}.mp3`,
+  ]);
 }

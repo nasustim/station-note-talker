@@ -36,8 +36,8 @@ object-assign
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */var r="function"==typeof Symbol&&Symbol.for,i=r?Symbol.for("react.element"):60103,o=r?Symbol.for("react.portal"):60106,a=r?Symbol.for("react.fragment"):60107,l=r?Symbol.for("react.strict_mode"):60108,u=r?Symbol.for("react.profiler"):60114,c=r?Symbol.for("react.provider"):60109,s=r?Symbol.for("react.context"):60110,f=r?Symbol.for("react.async_mode"):60111,d=r?Symbol.for("react.concurrent_mode"):60111,p=r?Symbol.for("react.forward_ref"):60112,h=r?Symbol.for("react.suspense"):60113,m=r?Symbol.for("react.suspense_list"):60120,g=r?Symbol.for("react.memo"):60115,v=r?Symbol.for("react.lazy"):60116,y=r?Symbol.for("react.block"):60121,b=r?Symbol.for("react.fundamental"):60117,w=r?Symbol.for("react.responder"):60118,k=r?Symbol.for("react.scope"):60119;function x(e){if("object"==typeof e&&null!==e){var t=e.$$typeof;switch(t){case i:switch(e=e.type){case f:case d:case a:case u:case l:case h:return e;default:switch(e=e&&e.$$typeof){case s:case p:case v:case g:case c:return e;default:return t}}case o:return t}}}function S(e){return x(e)===d}t.AsyncMode=f,t.ConcurrentMode=d,t.ContextConsumer=s,t.ContextProvider=c,t.Element=i,t.ForwardRef=p,t.Fragment=a,t.Lazy=v,t.Memo=g,t.Portal=o,t.Profiler=u,t.StrictMode=l,t.Suspense=h,t.isAsyncMode=function(e){return S(e)||x(e)===f},t.isConcurrentMode=S,t.isContextConsumer=function(e){return x(e)===s},t.isContextProvider=function(e){return x(e)===c},t.isElement=function(e){return"object"==typeof e&&null!==e&&e.$$typeof===i},t.isForwardRef=function(e){return x(e)===p},t.isFragment=function(e){return x(e)===a},t.isLazy=function(e){return x(e)===v},t.isMemo=function(e){return x(e)===g},t.isPortal=function(e){return x(e)===o},t.isProfiler=function(e){return x(e)===u},t.isStrictMode=function(e){return x(e)===l},t.isSuspense=function(e){return x(e)===h},t.isValidElementType=function(e){return"string"==typeof e||"function"==typeof e||e===a||e===d||e===u||e===l||e===h||e===m||"object"==typeof e&&null!==e&&(e.$$typeof===v||e.$$typeof===g||e.$$typeof===c||e.$$typeof===s||e.$$typeof===p||e.$$typeof===b||e.$$typeof===w||e.$$typeof===k||e.$$typeof===y)},t.typeOf=x},function(e,t,n){"use strict";n.r(t);n(11);var r=n(0),i=n.n(r),o=n(7),a=n.n(o),l=n(1);const u=l.a.div`
-  width: 200px;
-  height: 200px;
+  width: 170px;
+  height: 170px;
 
   margin: 0;
   padding: 0;
@@ -56,25 +56,64 @@ object-assign
   align-items: center;
   p {
     color: white;
-    font-size: 80px;
+    font-size: 60px;
     transform: rotate(90deg);
   }
-`,c=[...new Array(11)].map((e,t)=>`voices/voice-${t}.mp3`);class s{_setupSperker(){this.panner.coneOuterGain=.1,this.panner.coneOuterAngle=180,this.panner.coneInnerAngle=0;const e=30*Math.random()-15,t=Math.sqrt(225-e*e)*(Math.random()>.5?-1:1);console.log(`[speaker position]: (${e}, ${-t}, 0)`),this.panner.setPosition(e,t,0)}_setupListner(){}playOneShot(){const e=new AudioContext;this.source=e.createBufferSource(),this.panner=e.createPanner(),new BufferLoader(e,c,e=>{this.source.buffer=e[Math.floor(11*Math.random())]}).load(),this._setupSperker(),this.panner.connect(e.destination),this.source.connect(this.panner),this.source.start(0)}stop(){this.source.stop(0)}}window.onload=()=>{window.AudioContext=window.AudioContext||window.webkitAudioContext};const f={isPlay:!1,loopId:null,audio:null};class d extends i.a.Component{constructor(e){super(e),this.state=f,this._handler=this._handler.bind(this)}_handler(e){if(e.preventDefault(),this.state.isPlay)m("stop"),this.audio.stop(),null!=this.state.loopId&&(clearInterval(this.state.loopId),this.setState({loopId:null}));else{m("start"),this.audio.playOneShot();const e=setInterval(()=>{this.audio.playOneShot()},5e3);this.setState({loopId:e})}this.setState({isPlay:!this.state.isPlay})}componentDidMount(){this.audio=new s}render(){return i.a.createElement(h,null,i.a.createElement(p,null,"五反田駅"),i.a.createElement(u,{onClick:this._handler},i.a.createElement("p",null,this.state.isPlay?"=":"▲")))}}const p=l.a.h1`
+`,c=[...new Array(11)].map((e,t)=>`voices/voice-${t}.mp3`);class s{_setupSperker(){this.panner.coneOuterGain=.1,this.panner.coneOuterAngle=180,this.panner.coneInnerAngle=0;const e=30*Math.random()-15,t=Math.sqrt(225-e*e)*(Math.random()>.5?-1:1);console.log(`[speaker position]: (${e}, ${-t}, 0)`),this.panner.setPosition(e,t,0)}_setupListner(){}playOneShot(){const e=new AudioContext;this.source=e.createBufferSource(),this.panner=e.createPanner(),new BufferLoader(e,c,e=>{this.source.buffer=e[Math.floor(11*Math.random())]}).load(),this._setupSperker(),this.panner.connect(e.destination),this.source.connect(this.panner),this.source.start(0)}stop(){this.source.stop(0)}}window.onload=()=>{window.AudioContext=window.AudioContext||window.webkitAudioContext};const f={isPlay:!1,loopId:null,audio:null};class d extends i.a.Component{constructor(e){super(e),this.state=f,this._handler=this._handler.bind(this)}_handler(e){if(e.preventDefault(),this.state.isPlay)y("stop"),this.audio.stop(),null!=this.state.loopId&&(clearInterval(this.state.loopId),this.setState({loopId:null}));else{y("start"),this.audio.playOneShot();const e=setInterval(()=>{this.audio.playOneShot()},5e3);this.setState({loopId:e})}this.setState({isPlay:!this.state.isPlay})}componentDidMount(){this.audio=new s}render(){return i.a.createElement(h,null,i.a.createElement(v,null,i.a.createElement(p,null,"五反田駅")),i.a.createElement(g,null,i.a.createElement("div",null)),i.a.createElement(m,null,i.a.createElement(u,{onClick:this._handler},i.a.createElement("p",null,this.state.isPlay?"=":"▲"))))}}const p=l.a.h1`
   color: black;
   font-size: 18pt;
 
-  margin-bottom: 50px;
+  margin: 50px auto 50px;
+
+  border: solid 0.5px #000;
+  padding: 20px 50px 30px;
+
+  background-color: white;
 `,h=l.a.div`
   width: 100vw;
   height: 100vh;
 
-  margin: 0;
-  padding: 0;
+  position: relative;
+`,m=l.a.div`
+  position: fixed;
+  z-index: 10;
 
-  background-color: #EFEFEF;
+  right: 0;
+  bottom: -10px;
+`,g=l.a.div`
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
 
+  div {
+    position: absolute;
+
+    right: 0px;
+    bottom: -20px;
+
+    height: calc(240px * 1.5);
+    width: calc(110px * 1.5);
+    transform: rotate(-12deg);
+
+    border-radius: 50%;
+    border: solid 1px #1e1e1e;
+
+    background-color: #ffffff;
+  }
+  pointer-events: none;
+`,v=l.a.div`
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
-`,m=e=>console.log("[debug] "+e);a.a.render(i.a.createElement(i.a.StrictMode,null,i.a.createElement(d,null)),document.getElementById("root"))}]);
+  justify-content: start;
+
+  overflow-y: scroll;
+
+  background-color: #fcfcfc;
+`,y=e=>console.log("[debug] "+e);a.a.render(i.a.createElement(i.a.StrictMode,null,i.a.createElement(d,null)),document.getElementById("root"))}]);
